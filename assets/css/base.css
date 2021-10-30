@@ -1,0 +1,98 @@
+body {
+	background-image: url("http://localhost/mynovel/assets/img/starry1.jpg");
+	background-size: cover;
+}
+
+.alert {
+	width: 250px;
+}
+
+.login {
+	background-image: url("http://localhost/mynovel/assets/img/sunset.jpg");
+	background-size: cover;
+	color: white;
+	background-position: -170px 0;
+}
+
+.device {
+	margin-top: 100px;
+}
+
+.login-mynovel {
+	margin-top: 74px;
+}
+
+.registration-mynovel {
+	margin-top: 20px;
+}
+
+.registration {
+	background-image: url("http://localhost/mynovel/assets/img/sunset.jpg");
+	background-size: cover;
+	background-position: -190px 0;
+	color: white;
+	margin-top: -30px;
+}
+
+.facebook {
+	background-color: #344e86;
+	color: white;
+}
+
+.google {
+	background-color: white;
+	color: black;
+}
+
+.facebook,
+.google {
+	width: 250px;
+	border-radius: 13px;
+	text-align: left;
+}
+
+.facebook:hover {
+	background-color: #273d68;
+	color: white;
+}
+
+.google:hover {
+	background-color: #cecaca;
+}
+
+.btn-login {
+	width: 250px;
+	border-radius: 13px;
+}
+
+footer {
+	background-color: black;
+	opacity: 0.8;
+	padding: 20px;
+	color: white;
+	margin-top: 89px;
+}
+
+footer a {
+	text-decoration: none;
+	color: white;
+	margin-right: 15px;
+}
+
+.contact {
+	margin-right: 300px;
+}
+
+.login input {
+	width: 250px;
+}
+
+@media (max-width: 576px) {
+	.device {
+		margin-left: 20px !important;
+		margin-top: 50px !important;
+		margin-bottom: 60px;
+		width: 275px;
+		height: 190px;
+	}
+}
