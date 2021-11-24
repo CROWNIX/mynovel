@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light mb-5 fixed-top" style="background-color: #4DAFAE;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="<?= base_url("assets/img/logo.jpeg"); ?>" alt="" width="30" height="29"
@@ -64,7 +64,7 @@
                     <form class="d-flex">
                         <div class="input-group search mt-1">
                             <input type="text" class="form-control" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                            <button class="btn btn-light" type="button" id="button-addon2"><i
                                     class="fas fa-search"></i></button>
                         </div>
                     </form>

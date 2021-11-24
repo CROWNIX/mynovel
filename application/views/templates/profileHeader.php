@@ -10,6 +10,7 @@
 
     <!-- My Css -->
     <link rel="stylesheet" href="<?= base_url("assets/css/Myn.css"); ?>">
+    <link rel="stylesheet" href="<?= base_url("assets/vendor/sidebar-02/css/style.css"); ?>">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url("assets/fontawesome/css/all.min.css"); ?>">

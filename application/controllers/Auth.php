@@ -1,14 +1,9 @@
 <?php 
 
 class Auth extends CI_Controller{
-    public function __construct(){
-        parent::__construct();
-        $this->load->library("form_validation");
-    }
-
     public function index(){
         if($this->session->userdata("login")){
-            redirect("user");
+            redirect("novel");
         }else{
             $this->form_validation->set_rules("username", "Username", "trim|required");
             $this->form_validation->set_rules("password", "Password", "trim|required");
@@ -45,7 +40,7 @@ class Auth extends CI_Controller{
                         ];
 
                         $this->session->set_userdata($data);
-                        redirect("user");
+                        redirect("Novel");
                     }
                 }else{
                     $this->session->set_flashdata("message", '<div class="alert alert-danger alert-dismissible fade show" role="alert">email has not been activated<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
@@ -71,7 +66,7 @@ class Auth extends CI_Controller{
                         ];
 
                         $this->session->set_userdata($data);
-                        redirect("user");
+                        redirect("Novel");
                     }else{
                         $this->session->set_flashdata("message", '<div class="alert alert-danger alert-dismissible fade show" role="alert">Wrong Password<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
                 redirect("auth");
