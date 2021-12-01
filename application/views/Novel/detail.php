@@ -95,7 +95,7 @@
                             <span>ISBN</span>
                             <p><?= $novel["isbn"]; ?></p>
                             <span>Bahasa</span>
-                            <p><?= $novel["bahasa"]; ?></p>
+                            <p>Indonesia</p>
                         </div>
                         <div class="col">
                             <span>Penerbit</span>

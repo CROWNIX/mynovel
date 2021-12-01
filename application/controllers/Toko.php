@@ -84,16 +84,46 @@ class Toko extends CI_Controller{
                 $data["user"] = $this->db->get_where("user", ["email" => $this->session->userdata("email")])->row_array();
             }
 
-            if(!$this->TokoModel->getTokoByUsername($data["user"]["username"])){
+            $toko = $this->TokoModel->getTokoByUsername($data["user"]["username"]);
+            if(!$toko){
                 redirect("toko/form");
             }
-    
-            $data["title"] = "Tambah Produk";
-            $data["kategori"] = $this->NovelModel->getKategori();
+            
+            $this->form_validation->set_rules("cover", "Cover", "required|trim", [
+                "required" => "Foto Utama harus ada"
+            ]);
+            $this->form_validation->set_rules("judul", "Judul", "required|trim", [
+                "required" => "Nama Produk harus diisi"
+            ]);
+            $this->form_validation->set_rules("kategori_id", "Kategori", "trim");
+            $this->form_validation->set_rules("penulis", "Penulis", "required|trim", [
+                "required" => "Penulis harus diisi"
+            ]);
+            $this->form_validation->set_rules("penerbit", "Penerbit", "required|trim", [
+                "required" => "Penerbit harus diisi"
+            ]);
+            $this->form_validation->set_rules("jumlah_halaman", "Jumlah Halaman", "required|trim", [
+                "required" => "Jumlah Halaman harus diisi"
+            ]);
+            $this->form_validation->set_rules("deskripsi", "Deskripsi", "required|trim", [
+                "required" => "Deskripsi harus diisi"
+            ]);
+            $this->form_validation->set_rules("harga", "Harga", "required|trim", [
+                "required" => "Harga harus diisi"
+            ]);
 
-            $this->load->view("templates/header", $data);
-            $this->load->view("toko/tambah", $data);
-            $this->load->view("templates/footer");
+            if($this->form_validation->run() == false){
+                $data["title"] = "Tambah Produk";
+                $data["kategori"] = $this->NovelModel->getKategori();
+                $data["toko"] = $toko;
+    
+                $this->load->view("templates/header", $data);
+                $this->load->view("toko/tambah", $data);
+                $this->load->view("templates/footer");       
+            }else{
+                var_dump($this->input->post());
+                die;
+            }
         }else{
             redirect("auth");
         }

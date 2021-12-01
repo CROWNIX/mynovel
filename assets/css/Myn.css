@@ -125,3 +125,33 @@ span.beli {
 	height: 1px;
 	background-color: black;
 }
+
+/* tambah produk */
+.box label:hover {
+	cursor: pointer;
+}
+
+.box {
+	height: 130px;
+	width: 130px;
+	position: relative;
+}
+
+.upload img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+}
+
+.upload label {
+	position: relative;
+	z-index: 999;
+}
+
+.invalid {
+	border: 1px solid red !important;
+	color: red;
+}

@@ -13,6 +13,9 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url("assets/fontawesome/css/all.min.css"); ?>">
+
+    <!-- Google Web Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title><?= $title; ?></title>
 </head>
 
