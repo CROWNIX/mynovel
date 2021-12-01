@@ -111,6 +111,21 @@ class Toko extends CI_Controller{
             $this->form_validation->set_rules("harga", "Harga", "required|trim", [
                 "required" => "Harga harus diisi"
             ]);
+            $this->form_validation->set_rules("stok", "Stok", "required|trim", [
+                "required" => "Stok harus diisi"
+            ]);
+            $this->form_validation->set_rules("isbn", "ISBN", "required|trim", [
+                "required" => "ISBN harus diisi"
+            ]);
+            $this->form_validation->set_rules("berat", "Berat", "required|trim", [
+                "required" => "Berat harus diisi"
+            ]);
+            $this->form_validation->set_rules("panjang", "Panjang", "required|trim", [
+                "required" => "Panjang harus diisi"
+            ]);
+            $this->form_validation->set_rules("lebar", "Lebar", "required|trim", [
+                "required" => "ISBN harus diisi"
+            ]);
 
             if($this->form_validation->run() == false){
                 $data["title"] = "Tambah Produk";

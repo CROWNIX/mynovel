@@ -93,7 +93,8 @@
             </div>
             <div class="col">
                 <input type="text" class="form-control <?= (form_error("judul")) ? "is-invalid" : ''; ?>" id="nama"
-                    placeholder="Contoh : insecurity is My Middle Name" autocomplete="off" name="judul">
+                    placeholder="Contoh : insecurity is My Middle Name" autocomplete="off" name="judul"
+                    value="<?= set_value("judul"); ?>">
                 <?= form_error("judul", '<small class="text-danger">', "</small>"); ?>
             </div>
         </div>
@@ -128,7 +129,8 @@
             </div>
             <div class="col">
                 <input type="text" class="form-control <?= (form_error("penulis")) ? "is-invalid" : ''; ?>" id="penulis"
-                    placeholder="Masukan Nama Penulis" autocomplete="off" name="penulis">
+                    placeholder="Masukan Nama Penulis" autocomplete="off" name="penulis"
+                    value="<?= set_value("penulis"); ?>">
                 <?= form_error("penulis", '<small class="text-danger">', "</small>"); ?>
             </div>
         </div>
@@ -140,7 +142,8 @@
             </div>
             <div class="col">
                 <input type="text" class="form-control  <?= (form_error("penerbit")) ? "is-invalid" : ''; ?>"
-                    id="penerbit" placeholder="Masukan Nama Penerbit" autocomplete="off" name="penerbit">
+                    id="penerbit" placeholder="Masukan Nama Penerbit" autocomplete="off" name="penerbit"
+                    value="<?= set_value("penerbit"); ?>">
                 <?= form_error("penerbit", '<small class="text-danger">', "</small>"); ?>
             </div>
         </div>
@@ -152,7 +155,8 @@
             </div>
             <div class="col">
                 <input type="text" class="form-control <?= (form_error("jumlah_halaman")) ? "is-invalid" : ''; ?>"
-                    id="jumlahHalaman" placeholder="Masukan Jumlah Halaman" autocomplete="off" name="jumlah_halaman">
+                    id="jumlahHalaman" placeholder="Masukan Jumlah Halaman" autocomplete="off" name="jumlah_halaman"
+                    value="<?= set_value("jumlah_halaman"); ?>">
                 <?= form_error("jumlah_halaman", '<small class="text-danger">', "</small>"); ?>
             </div>
         </div>
@@ -190,12 +194,8 @@
                 <p>Deskripsi Produk berisi cerita singkat atau sinopsis novel.</p>
             </div>
             <div class="col">
-                <div class="form-floating">
-                    <textarea class="form-control <?= (form_error("deskripsi")) ? "is-invalid" : ''; ?>"
-                        placeholder="Leave a comment here" id="deskripsi" style="height: 100px"
-                        name="deskripsi"></textarea>
-                    <label for="deskripsi">Deskripsi Produk</label>
-                </div>
+                <textarea class="form-control <?= (form_error("deskripsi")) ? "is-invalid" : ''; ?>" id="deskripsi"
+                    rows="3" name="deskripsi"><?= set_value("deskripsi"); ?></textarea>
                 <?= form_error("deskripsi", '<small class="text-danger">', "</small>"); ?>
             </div>
         </div>
@@ -229,7 +229,7 @@
                     <span class="input-group-text" id="basic-addon1">Rp</span>
                     <input type="number" class="form-control <?= (form_error("harga")) ? "is-invalid" : ''; ?>"
                         placeholder="Masukan Harga" aria-label="Username" aria-describedby="basic-addon1"
-                        id="hargaSatuan" name="harga">
+                        id="hargaSatuan" name="harga" value="<?= set_value("harga"); ?>">
                 </div>
                 <?= form_error("harga", '<small class="text-danger">', "</small>"); ?>
             </div>
@@ -248,7 +248,9 @@
                 </label>
             </div>
             <div class="col">
-                <input type="number" id="stok" class="form-control" placeholder="Masukan Jumlah Produk" name="stok">
+                <input type="number" id="stok" class="form-control <?= (form_error("stok")) ? "is-invalid" : ''; ?>"
+                    placeholder="Masukan Jumlah Produk" name="stok" value="<?= set_value("stok"); ?>">
+                <?= form_error("stok", '<small class="text-danger">', "</small>"); ?>
             </div>
         </div>
         <div class="row">
@@ -259,7 +261,9 @@
                 <p>Gunakan ISBN jika kamu ingin menandai produkmu</p>
             </div>
             <div class="col">
-                <input type="text" id="isbn" class="form-control" placeholder="Masukan ISBN" name="isbn">
+                <input type="text" id="isbn" class="form-control <?= (form_error("isbn")) ? "is-invalid" : ''; ?>"
+                    placeholder="Masukan ISBN" name="isbn" value="<?= set_value("isbn"); ?>">
+                <?= form_error("isbn", '<small class="text-danger">', "</small>"); ?>
             </div>
         </div>
     </div>
@@ -279,9 +283,11 @@
             <div class="col-lg-3">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Gr</span>
-                    <input type="number" class="form-control" placeholder="Masukan berat" aria-label="Username"
-                        aria-describedby="basic-addon1" id="berat" name="berat">
+                    <input type="number" class="form-control <?= (form_error("berat")) ? "is-invalid" : ''; ?>"
+                        placeholder="Masukan berat" aria-label="Username" aria-describedby="basic-addon1" id="berat"
+                        name="berat" value="<?= set_value("berat"); ?>">
                 </div>
+                <?= form_error("berat", '<small class="text-danger">', "</small>"); ?>
             </div>
         </div>
         <div class="row">
@@ -291,15 +297,19 @@
             </div>
             <div class="col-lg-6 d-flex align-items-start">
                 <div class="input-group mb-3 me-2">
-                    <input type="number" class="form-control" placeholder="Panjang" aria-label="Username"
-                        aria-describedby="basic-addon1" name="panjang">
+                    <input type="number" class="form-control <?= (form_error("panjang")) ? "is-invalid" : ''; ?>"
+                        placeholder="Panjang" aria-label="Username" aria-describedby="basic-addon1" name="panjang"
+                        value="<?= set_value("panjang"); ?>">
                     <span class="input-group-text" id="basic-addon1">Cm</span>
                 </div>
+                <?= form_error("panjang", '<small class="text-danger">', "</small>"); ?>
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="Lebar" aria-label="Username"
-                        aria-describedby="basic-addon1" name="lebar">
+                    <input type="number" class="form-control <?= (form_error("lebar")) ? "is-invalid" : ''; ?>"
+                        placeholder="Lebar" aria-label="Username" aria-describedby="basic-addon1" name="lebar"
+                        value="<?= set_value("lebar"); ?>">
                     <span class="input-group-text" id="basic-addon1">Cm</span>
                 </div>
+                <?= form_error("lebar", '<small class="text-danger">', "</small>"); ?>
             </div>
         </div>
     </div>
