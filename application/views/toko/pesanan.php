@@ -44,7 +44,7 @@
                         <i class="fas fa-comment-alt fa-lg"></i>
                         <a href="#" class="text-decoration-none fw-bold text-dark">Diskusi</a>
                     </li>
-                    <li class="mb-2">
+                    <li class="mb-2 dropdown-produk">
                         <i class="fas fa-box-open"></i>
                         <a class="dropdown-toggle text-decoration-none fw-bold text-dark" data-bs-toggle="collapse"
                             href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -88,45 +88,33 @@
         </nav>
     </div>
 
-    <!-- Page Content  -->
+    <!-- Content -->
     <div id="content" class="col-lg p-3 mt-5 daftar-produk rounded" style="position: relative;">
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col-3 text-center" style="border-right: 1px solid black;">
-                    <h5>0</h5>
-                    <span>Belum Bayar</span>
-                </div>
-                <div class="col-3 text-center" style="border-right: 1px solid black;">
-                    <h5>0</h5>
-                    <span>Pengiriman Perlu Diproses</span>
-                </div>
-                <div class="col-3 text-center" style="border-right: 1px solid black;">
-                    <h5>0</h5>
-                    <span>Pengiriman Telah Diproses</span>
-                </div>
-                <div class="col-3 text-center" style="border-right: 1px solid black;">
-                    <h5>0</h5>
-                    <span>Menunggu Respon Pembatalan</span>
-                </div>
-            </div>
-            <div class="row justify-content-evenly">
-                <div class="col-3 text-center" style="border-right: 1px solid black;">
-                    <h5>0</h5>
-                    <span>Menunggu Respon Pengembalian</span>
-                </div>
-                <div class="col-3 text-center" style="border-right: 1px solid black;">
-                    <h5>0</h5>
-                    <span>Produk Diblokir</span>
-                </div>
-                <div class="col-3 text-center" style="border-right: 1px solid black;">
-                    <h5>0</h5>
-                    <span>Produk Habis</span>
-                </div>
-                <div class="col-3 text-center" style="border-right: 1px solid black;">
-                    <h5>0</h5>
-                    <span>Promo Akan Datang</span>
-                </div>
-            </div>
-        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Info Produk</th>
+                    <th scope="col">Stok</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">Tanggal Pesan</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $i = 1; ?>
+                <?php $n = 0; ?>
+                <?php forEach($pesanan as $p): ?>
+                <tr>
+                    <th scope="row"><?= $i++; ?></th>
+                    <td><?= $novel[$n++]["judul"]; ?></td>
+                    <td><?= $p["stok"]; ?></td>
+                    <td><?= $p["harga"]; ?></td>
+                    <td>14 desember 2021</td>
+                    <td><?= $p["status"]; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
 </div>

@@ -125,7 +125,5 @@ class Auth extends CI_Controller{
 
         $this->session->set_flashdata("message", '<div class="alert alert-success alert-dismissible fade show" role="alert">You have been logged out<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
         redirect("auth");
-
-
     }
 }

@@ -13,9 +13,6 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url("assets/fontawesome/css/all.min.css"); ?>">
-
-    <!-- Google Web Font -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title><?= $title; ?></title>
 </head>
 
@@ -109,7 +106,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="<?= base_url("toko/index/" . $user["username"]); ?>">
+                                <a class="dropdown-item" href="<?= base_url("toko"); ?>">
                                     <i class="fas fa-home" style="margin-left: -3px;"></i>
                                     <span>Buka Toko</span>
                                 </a>

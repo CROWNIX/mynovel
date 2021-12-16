@@ -1,5 +1,10 @@
-<div class="flash-data" data-flashdata="<?= $this->session->flashdata("kategori"); ?>"></div>
-<?php unset($_SESSION["kategori"]); ?>
+<div class="flash-data" data-pesan="<?= $this->session->userdata("pesan"); ?>"
+    data-judul="<?= $this->session->userdata("judul"); ?>" data-aksi="<?= $this->session->userdata("aksi"); ?>"></div>
+<?php unset(
+        $_SESSION['pesan'],
+        $_SESSION['judul'],
+        $_SESSION["aksi"]
+); ?>
 <?php if($novel) : ?>
 <div class="container" style="margin-top:100px">
     <div class="row">

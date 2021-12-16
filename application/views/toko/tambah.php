@@ -5,7 +5,7 @@
         </div>
     </div>
 </div>
-<form action="<?= base_url("toko/tambah"); ?>" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     <div class="container p-4 mb-3" style="background-color: rgba(255, 255, 255, 0.5);">
         <div class="row mb-5">
             <div class="col">
@@ -18,14 +18,14 @@
         <div class="row upload">
             <div class="col-lg-3">
                 <h6>Foto Produk</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolore, ad repellat explicabo omnis
-                    dignissimos corporis laboriosam asperiores! Eos harum saepe accusantium, sunt quos error iste earum
-                    qui
+                <p>Format gambar .jpg .jpeg .png dan ukuran minimum 300 x 300px,
                 </p>
+                <p>Pilih foto produk atau tarik dan letakan foto disini, cantumkan minimal foto utama untuk cover produk
+                    agar produk semakin menarik pembeli</p>
             </div>
             <div class="col">
                 <div
-                    class="box border border-dark p-4 rounded  text-center <?= (form_error("cover")) ? "invalid" : ''; ?>">
+                    class="box border border-dark p-4 rounded text-center <?= (form_error("cover")) ? "invalid" : ''; ?>">
                     <input type="file" id="cover" hidden onchange="previewImg()" name="cover">
                     <label for="cover" class="cover-label">
                         <i class="far fa-image fa-3x"></i><br>
@@ -33,10 +33,11 @@
                     </label>
                     <img class="cover-preview" src="" alt="" width="130" height="130">
                 </div>
+                <span class="cover-name"></span>
                 <?= form_error("cover", '<small class="text-danger">', "</small>"); ?>
             </div>
-            <div class="col text-center">
-                <div class="box border border-dark p-4 rounded">
+            <div class="col">
+                <div class="box border border-dark p-4 rounded text-center">
                     <input type="file" id="image2" hidden onchange="previewImg2()" name="image2">
                     <label for="image2" class="image2-label">
                         <i class="far fa-image fa-3x"></i><br>
@@ -44,9 +45,10 @@
                     </label>
                     <img class="image2-preview" src="" alt="" width="130" height="130">
                 </div>
+                <span class="image2-name"></span>
             </div>
-            <div class="col text-center">
-                <div class="box border border-dark p-4 rounded">
+            <div class="col">
+                <div class="box border border-dark p-4 rounded text-center">
                     <input type="file" id="image3" hidden onchange="previewImg3()" name="image3">
                     <label for="image3" class="image3-label">
                         <i class="far fa-image fa-3x"></i><br>
@@ -54,9 +56,10 @@
                     </label>
                     <img class="image3-preview" src="" alt="" width="130" height="130">
                 </div>
+                <span class="image3-name"></span>
             </div>
-            <div class="col text-center">
-                <div class="box border border-dark p-4 rounded">
+            <div class="col">
+                <div class="box border border-dark p-4 rounded text-center">
                     <input type="file" id="image4" hidden onchange="previewImg4()" name="image4">
                     <label for="image4" class="image4-label">
                         <i class="far fa-image fa-3x"></i><br>
@@ -64,9 +67,10 @@
                     </label>
                     <img class="image4-preview" src="" alt="" width="130" height="130">
                 </div>
+                <span class="image4-name"></span>
             </div>
-            <div class="col text-center">
-                <div class="box border border-dark p-4 rounded">
+            <div class="col">
+                <div class="box border border-dark p-4 rounded text-center">
                     <input type="file" id="image5" hidden onchange="previewImg5()" name="image5">
                     <label for="image5" class="image5-label">
                         <i class="far fa-image fa-3x"></i><br>
@@ -74,6 +78,7 @@
                     </label>
                     <img class="image5-preview" src="" alt="" width="130" height="130">
                 </div>
+                <span class="image5-name"></span>
             </div>
         </div>
     </div>
@@ -154,7 +159,7 @@
                 </label>
             </div>
             <div class="col">
-                <input type="text" class="form-control <?= (form_error("jumlah_halaman")) ? "is-invalid" : ''; ?>"
+                <input type="number" class="form-control <?= (form_error("jumlah_halaman")) ? "is-invalid" : ''; ?>"
                     id="jumlahHalaman" placeholder="Masukan Jumlah Halaman" autocomplete="off" name="jumlah_halaman"
                     value="<?= set_value("jumlah_halaman"); ?>">
                 <?= form_error("jumlah_halaman", '<small class="text-danger">', "</small>"); ?>
@@ -281,7 +286,7 @@
                 <p>Masukan berat dengan menimbang produk setelah dikemas</p>
             </div>
             <div class="col-lg-3">
-                <div class="input-group mb-3">
+                <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Gr</span>
                     <input type="number" class="form-control <?= (form_error("berat")) ? "is-invalid" : ''; ?>"
                         placeholder="Masukan berat" aria-label="Username" aria-describedby="basic-addon1" id="berat"
@@ -314,8 +319,8 @@
         </div>
     </div>
     <input type="hidden" name="toko_id" value="<?= $toko["id"]; ?>">
-    <div class="container d-flex justify-content-end">
-        <a href="#" class="btn btn-danger me-2" style="width: 100px">Batal</a>
+    <div class="container d-flex justify-content-end mb-3">
+        <a href="<?= base_url("toko"); ?>" class="btn btn-danger me-2" style="width: 100px">Batal</a>
         <button class="btn btn-success" type="submit" style="width: 100px">Simpan</button>
     </div>
 </form>

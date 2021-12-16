@@ -59,8 +59,8 @@
             <?php forEach($novel as $n) : ?>
             <div class="col mt-2">
                 <div class="card px-2 pt-2 mb-5 novel" style="width: 190px; height:100%;">
-                    <img src="<?= base_url("assets/img/" . $n["cover"]); ?>" class="card-img-top rounded" alt="..."
-                        width="50" height="250">
+                    <img src="<?= base_url("assets/img/novel/" . $n["cover"]); ?>" class="card-img-top rounded"
+                        alt="..." width="50" height="250">
                     <a href="<?= base_url("novel/detail/" . $n["id"]); ?>" class="fw-bold text-decoration-none"
                         style="color: #278180;"><?= $n["judul"]; ?></a>
                     <div class="d-flex icon ms-1">

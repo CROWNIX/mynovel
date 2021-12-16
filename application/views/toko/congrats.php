@@ -1,1 +1,0 @@
-<img src="<?= base_url("assets/img/congrats.jpg"); ?>" alt="" width="200">

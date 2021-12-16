@@ -60,6 +60,13 @@
                         <span class="text-uppercase">home</span>
                     </a>
                 </ul>
+                <a href="<?= base_url("novel/keranjang"); ?>" class="position-relative me-3 text-dark">
+                    <i class="fas fa-shopping-cart fs-3"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <?= count($keranjang); ?>
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </a>
                 <ul class="navbar-nav">
                     <form class="d-flex">
                         <div class="input-group search mt-1">
@@ -106,7 +113,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="<?= base_url("toko/index/" . $user["username"]); ?>">
+                                <a class="dropdown-item" href="<?= base_url("toko"); ?>">
                                     <i class="fas fa-home" style="margin-left: -3px;"></i>
                                     <span>Buka Toko</span>
                                 </a>

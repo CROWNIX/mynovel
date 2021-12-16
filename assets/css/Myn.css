@@ -155,3 +155,7 @@ span.beli {
 	border: 1px solid red !important;
 	color: red;
 }
+
+.table tbody tr * {
+	vertical-align: middle;
+}
