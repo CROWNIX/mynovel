@@ -30,12 +30,12 @@
                     <i class="fab fa-whatsapp fa-lg text-success"></i>
                 </div>
             </div>
-            <a href="" class="text-decoration-none text-dark me-3">Pilih format novel</a>
-            <a href="#deskripsi" class="text-decoration-none text-dark me-3">Deskripsi novel</a>
-            <a href="#detail" class="text-decoration-none text-dark me-3">Detail novel</a>
+            <a href="" class="text-decoration-none text-dark me-3">Pilih Format Novel</a>
+            <a href="#deskripsi" class="text-decoration-none text-dark me-3">Deskripsi Novel</a>
+            <a href="#detail" class="text-decoration-none text-dark me-3">Detail Novel</a>
             <a href="" class="text-decoration-none text-dark me-3">Review</a>
             <span class="line mt-2 mb-2"></span>
-            <p class="fw-bold">Format buku yang tersedia</p>
+            <p class="fw-bold">Format Buku Yang Tersedia</p>
             <div class="card card-detail" style="width: 15rem;">
                 <div class="card-body">
                     <h4>Soft Cover</h4>
@@ -46,7 +46,7 @@
             <div class="card card-detail mt-3" style="width: 100%;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <h5>Format buku terpilih</h5>
+                        <h5>Format Buku Terpilih</h5>
                         <a href="" class="text-decoration-none fw-bold text-primary">Pilih Lainnya</a>
                     </div>
                     <div class="row">
@@ -103,7 +103,7 @@
         <div class="col-3" style="position: relative;">
             <div class=" card px-3 pt-3 pb-3 py-3 card-detail" style="width: 18rem; position:fixed">
                 <span>Ingin beli berapa?</span>
-                <p class="fw-bold">Jumlah barang</p>
+                <p class="fw-bold">Jumlah Barang</p>
                 <div>
                     <i class="fas fa-minus-circle"></i>
                     <span class="jumlahBeli"><?= $keranjang["stok"]; ?></span>
