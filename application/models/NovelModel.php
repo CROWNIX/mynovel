@@ -33,11 +33,12 @@ class NovelModel extends CI_Model{
         return $this->db->get_where("keranjang", ["novel_id" => $id])->result_array();
     }
 
-    public function joinNovelAndKeranjangById($id){
+    public function joinNovelAndKeranjangByIdAndUsername($id, $username){
         $this->db->select("*");
         $this->db->from('novel');
         $this->db->join('keranjang', 'keranjang.novel_id = novel.id');
         $this->db->where('novel_id', $id);
+        $this->db->where("pembeli", $username);
         return $this->db->get()->result_array();
     }
 

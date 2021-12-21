@@ -17,6 +17,8 @@ class Novel extends CI_Controller{
             $data["title"] = "My Novel";
             $data["novel"] = $this->NovelModel->getAllNovel();
             $data["kategori"] = $this->NovelModel->getKategori();
+            $data["keranjang"] = $this->NovelModel->joinNovelAndKeranjangByPembeli($data["user"]["username"]);
+            $data["jumlah"] = count($data["keranjang"]);
 
             $this->load->view("templates/header", $data);
             $this->load->view("novel/index", $data);
@@ -37,6 +39,8 @@ class Novel extends CI_Controller{
             $data["title"] = "My Novel | Detail";
             $data["novel"] = $this->NovelModel->getNovelById($id);
             $data["kategori"] = $this->NovelModel->getKategori();
+            $data["keranjang"] = $this->NovelModel->joinNovelAndKeranjangByPembeli($data["user"]["username"]);
+            $data["jumlah"] = count($data["keranjang"]);
 
             $this->load->view("templates/header", $data);
             $this->load->view("novel/detail", $data);
@@ -57,6 +61,8 @@ class Novel extends CI_Controller{
             $data["kategori"] = $this->NovelModel->getKategori();
             $data["novel"] = $this->NovelModel->joinNovelAndKategori($kategori);
             $data["title"] = "My Novel | " . $kategori;
+            $data["keranjang"] = $this->NovelModel->joinNovelAndKeranjangByPembeli($data["user"]["username"]);
+            $data["jumlah"] = count($data["keranjang"]);
             if(empty($data["novel"])){
                 $newdata = array(
                     'judul'  => 'Novel',
@@ -124,6 +130,7 @@ class Novel extends CI_Controller{
                 $this->session->set_userdata($newdata);
             }
             $data["keranjang"] = $this->NovelModel->joinNovelAndKeranjangByPembeli($data["user"]["username"]);
+            $data["jumlah"] = count($data["keranjang"]);
 
             $this->load->view("templates/header", $data);
             $this->load->view("novel/keranjang", $data);
@@ -142,10 +149,13 @@ class Novel extends CI_Controller{
             }
 
             $data["title"] = "My Novel | Checkout";
-            $data["keranjang"] = $this->NovelModel->joinNovelAndKeranjangById($id)[0];
+            $data["keranjang"] = $this->NovelModel->joinNovelAndKeranjangByPembeli($data["user"]["username"]);
+            $data["jumlah"] = count($data["keranjang"]);
+            $data["keranjang"] = $this->NovelModel->joinNovelAndKeranjangByIdAndUsername($id, $data["user"]["username"])[0];
             $data["novel"] = $this->NovelModel->getNovelById($id);
             $data["kategori"] = $this->NovelModel->getKategori();
             $data["provinsi"] = $this->SelectModel->getProvinsi();
+            
 
             $this->load->view("templates/header", $data);
             $this->load->view("novel/checkout", $data);
@@ -195,6 +205,7 @@ class Novel extends CI_Controller{
             $data["title"] = "My Novel | Pesanan Saya";
             $data["pesanan"] = $this->NovelModel->joinNovelAndPesananByUsername($this->session->userdata("username"));
             $data["keranjang"] = $this->NovelModel->joinNovelAndKeranjangByPembeli($data["user"]["username"]);
+            $data["jumlah"] = count($data["keranjang"]);
        
             $this->load->view("templates/header", $data);
             $this->load->view("novel/pesanan", $data);

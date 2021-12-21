@@ -8,4 +8,8 @@ class TokoModel extends CI_Model{
     public function getPesanan(){
         return $this->db->get("pesanan")->result_array();
     }
+
+    public function getPesananByTokoId($id){
+        return $this->db->get_where("pesanan", ["toko_id" => $id])->result_array();
+    }
 }

@@ -6,9 +6,10 @@
         $_SESSION["aksi"]
 ); ?>
 
-<div class="container" style="margin-top: 100px;">
+<div class="container" style="margin-top: 100px; background-color:rgba(255, 255, 255, 0.6)">
     <div class="row">
         <div class="col">
+            <h3 class="mb-3">Pesanan Saya</h3>
             <table class="table">
                 <thead>
                     <tr>
@@ -18,7 +19,6 @@
                         <th scope="col">Harga</th>
                         <th scope="col">Tanggal Pesan</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,9 +31,7 @@
                         <td><?= $p["harga"]; ?></td>
                         <td>14 desember 2021</td>
                         <td><?= $p["status"]; ?></td>
-                        <td><button class="btn btn-success">Bayar</button></td>
-                    </tr>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

@@ -63,7 +63,7 @@
                 <a href="<?= base_url("novel/keranjang"); ?>" class="position-relative me-3 text-dark">
                     <i class="fas fa-shopping-cart fs-3"></i>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        <?= count($keranjang); ?>
+                        <?= $jumlah; ?>
                         <span class="visually-hidden">unread messages</span>
                     </span>
                 </a>

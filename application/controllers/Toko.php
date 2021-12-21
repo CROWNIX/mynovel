@@ -21,6 +21,7 @@ class Toko extends CI_Controller{
     
             $data["title"] = "Toko Saya";
             $data["kategori"] = $this->NovelModel->getKategori();
+            
 
             $this->load->view("templates/headerToko", $data);
             $this->load->view("toko/index", $data);
@@ -251,6 +252,8 @@ class Toko extends CI_Controller{
             $data["title"] = "Toko Saya";
             $data["kategori"] = $this->NovelModel->getKategori();
             $data["novel"] = $this->NovelModel->getAllNovelByTokoId($toko["id"]);
+            
+            
             $this->load->view("templates/headerToko", $data);
             $this->load->view("toko/produk", $data);
             $this->load->view("templates/footer");
@@ -274,7 +277,8 @@ class Toko extends CI_Controller{
     
             $data["title"] = "Pesanan Saya";
             $data["kategori"] = $this->NovelModel->getKategori();
-            $data["pesanan"] = $this->TokoModel->getPesanan();
+            $data["pesanan"] = $this->TokoModel->getPesananByTokoId($toko["id"]);
+            
             $novel = [];
             forEach($data["pesanan"] as $p){
                 $novel[] = $this->NovelModel->getNovelById($p["novel_id"]);
@@ -302,7 +306,23 @@ class Toko extends CI_Controller{
                 redirect("toko/form");
             }
 
+            if(!$id){
+                redirect("toko/produk");
+            }
+
+            $this->db->where("id", $id);
+            $this->db->delete("novel");
+            $this->db->where("novel_id", $id);
+            $this->db->where("toko_id", $toko["id"]);
+            $this->db->delete("pesanan");
+            $newdata = array(
+                'judul'  => 'Novel',
+                'pesan'  => 'Berhasil Dihapus',
+                'aksi'     => 'success'
+            );
             
+            $this->session->set_userdata($newdata);
+            redirect("toko/produk");
         }else{
             redirect("auth");
         }

@@ -37,14 +37,6 @@
                         <a href="#" class="text-decoration-none fw-bold text-dark">Home</a>
                     </li>
                     <li class="mb-2">
-                        <i class="fas fa-comment-dots fa-lg"></i>
-                        <a href="#" class="text-decoration-none fw-bold text-dark">Chat</a>
-                    </li>
-                    <li class="mb-2">
-                        <i class="fas fa-comment-alt fa-lg"></i>
-                        <a href="#" class="text-decoration-none fw-bold text-dark">Diskusi</a>
-                    </li>
-                    <li class="mb-2">
                         <i class="fas fa-box-open"></i>
                         <a class="dropdown-toggle text-decoration-none fw-bold text-dark" data-bs-toggle="collapse"
                             href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">

@@ -135,7 +135,7 @@
                 <form action="<?= base_url("novel/pesanan"); ?>" method="post">
                     <input type="hidden" value="<?= $keranjang["stok"]; ?>" class="pesanan-stok" name="stok">
                     <input type="hidden" value="<?= $keranjang["harga"]; ?>" class="pesanan-harga" name="harga">
-                    <input type="hidden" value="<?= $keranjang["id"]; ?>" name="novel_id">
+                    <input type="hidden" value="<?= $keranjang["novel_id"]; ?>" name="novel_id">
                     <input type="hidden" value="<?= $user["username"]; ?>" name="pembeli">
                     <input type="hidden" value="" name="total" class="total">
                     <input type="hidden" value="<?= $novel["toko_id"]; ?>" name="toko_id">
@@ -155,6 +155,14 @@
                     <label for="kecamatan_id" class="form-label kecamatanLabel">Kecamatan</label>
                     <select class="form-select" aria-label="Default select example" name="kecamatan_id"
                         id="kecamatan_id" required>
+                    </select>
+                    <label for="pengiriman" class="form-label kecamatanLabel">Metode Pengiriman</label>
+                    <select class="form-select" aria-label="Default select example" id="pengiriman">
+                        <option value="1">Reguler</option>
+                    </select>
+                    <label for="pembayaran" class="form-label kecamatanLabel">Metode Pembayaran</label>
+                    <select class="form-select" aria-label="Default select example" id="pembayaran">
+                        <option value="1">Cod</option>
                     </select>
                     <label for="alamat" class="form-label">Alamat</label>
                     <textarea class="form-control" id="alamat" rows="3" placeholder="Alamat Tujuan" required

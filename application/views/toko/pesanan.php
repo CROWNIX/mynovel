@@ -97,6 +97,7 @@
                     <th scope="col">Info Produk</th>
                     <th scope="col">Stok</th>
                     <th scope="col">Harga</th>
+                    <th scope="col">Penerima</th>
                     <th scope="col">Tanggal Pesan</th>
                     <th scope="col">Status</th>
                 </tr>
@@ -110,6 +111,7 @@
                     <td><?= $novel[$n++]["judul"]; ?></td>
                     <td><?= $p["stok"]; ?></td>
                     <td><?= $p["harga"]; ?></td>
+                    <td><?= $p["penerima"]; ?></td>
                     <td>14 desember 2021</td>
                     <td><?= $p["status"]; ?></td>
                 </tr>
